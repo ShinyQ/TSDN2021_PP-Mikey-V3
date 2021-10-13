@@ -1,5 +1,5 @@
 import streamlit as st
-from views import home, covid, tracing, patient
+from views import home, covid, tracing, patient, mobility
 
 st.set_page_config(
     page_title='PP Mikey V3 - Turnamen Sains Data Nasional',
@@ -11,7 +11,9 @@ PAGES = {
     "🏠 Halaman Utama": home,
     "🦠 Sebaran COVID-19 Jakarta": covid,
     "🔍 Tracing COVID-19 Jakarta": tracing,
-    "👩‍⚕️\t Sebaran Pasien COVID-19 Jakarta": patient
+    "👩‍⚕️\t Sebaran Pasien COVID-19 Jakarta": patient,
+    "🚗️ Mobilitas Masyarakat Jakarta": mobility
+
 }
 st.sidebar.subheader('Navigasi')
 

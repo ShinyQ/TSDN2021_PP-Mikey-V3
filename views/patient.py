@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import numpy as np
 
 
 def make_it_easy(q1, q2, q3, q4, col_kontak_erat, col_probable, col_suspek):
@@ -71,22 +69,6 @@ def app():
     q2 = df[68:136].copy()
     q3 = df[136:204].copy()
     q4 = df[204:273].copy()
-
-    q1_prob = q1["Total Probable"].sum(axis=0)
-    q1_kontak_erat = q1["Total Kontak Erat"].sum(axis=0)
-    q1_suspek = q1['Total Suspek'].sum(axis=0)
-
-    q2_prob = q2["Total Probable"].sum(axis=0)
-    q2_kontak_erat = q2["Total Kontak Erat"].sum(axis=0)
-    q2_suspek = q2['Total Suspek'].sum(axis=0)
-
-    q3_prob = q3["Total Probable"].sum(axis=0)
-    q3_kontak_erat = q3["Total Kontak Erat"].sum(axis=0)
-    q3_suspek = q3['Total Suspek'].sum(axis=0)
-
-    q4_prob = q4["Total Probable"].sum(axis=0)
-    q4_kontak_erat = q4["Total Kontak Erat"].sum(axis=0)
-    q4_suspek = q4['Total Suspek'].sum(axis=0)
 
     col_kontak_erat = ["Isolasi di RS (Kontak Erat)", "Isolasi di Rumah (Kontak Erat)",
                        "Meninggal (Kontak Erat)", "Selesai Isolasi (Kontak Erat)"]
@@ -211,7 +193,7 @@ def app():
 
     with col1:
         st.text("")
-        st.markdown("##### Segmentasi Orang Yang Terkena COVID-19")
+        st.markdown("#### Segmentasi Orang Yang Terkena COVID-19")
         name = ['Tanpa Gejala', 'Bergejala', 'Tidak Diketahui']
 
         fig = px.pie(
@@ -233,7 +215,7 @@ def app():
 
     with col2:
         st.text("")
-        st.markdown("##### Segmentasi Pasien Covid Jakarta")
+        st.markdown("#### Segmentasi Pasien Covid Jakarta")
         name = ['Isolasi Mandiri', 'Dalam Perawatan']
 
         fig = px.pie(
