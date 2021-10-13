@@ -12,6 +12,7 @@ def app():
             terkini menjadi sebuah solusi analitis, bekerja sama untuk membuat kerangka solusi berbasis data 
             menggunakan perangkat lunak pemrograman dan visualisasi dengan tujuan untuk meningkatkan kinerja bisnis 
             dan menciptakan peluang baru yang dapat di implementasikan dalam kasus nyata.
+            <br><br>
         </div>
     """, unsafe_allow_html=True)
 
