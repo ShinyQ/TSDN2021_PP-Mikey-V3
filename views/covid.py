@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -11,10 +10,8 @@ def slice_month(month):
 
 
 def app():
-    st.markdown("### Dataset Yang Digunakan")
     df = pd.read_csv('dataset/Data Academy_ED_03.csv')
     df = df.dropna()
-    st.write(df.tail(5))
 
     df['Tanggal'] = df['Tanggal'].astype('str')
     df['Meninggal Harian'] = df['Meninggal Harian'].astype(int)
@@ -32,6 +29,7 @@ def app():
     fig.update_layout(
         margin=dict(l=20, r=0, t=20, b=20),
         width=1000,
+        font=dict(size=14)
     )
     st.plotly_chart(fig)
 
@@ -45,6 +43,7 @@ def app():
     fig.update_layout(
         margin=dict(l=20, r=0, t=20, b=20),
         width=1000,
+        font=dict(size=14)
     )
 
     st.plotly_chart(fig)
@@ -76,9 +75,10 @@ def app():
         fig.update_traces(textposition='inside', textinfo='percent+label+value')
         fig.update_layout(
             width=450,
-            height=300,
+            height=350,
             margin=dict(l=0, r=0, t=20, b=20),
-            title_x=0.5
+            title_x=0.5,
+            font=dict(size=14)
         )
 
         st.plotly_chart(fig)
@@ -97,9 +97,10 @@ def app():
         fig.update_traces(textposition='inside', textinfo='percent+label+value')
         fig.update_layout(
             width=450,
-            height=300,
+            height=350,
             margin=dict(l=0, r=0, t=20, b=20),
-            title_x=0.5
+            title_x=0.5,
+            font = dict(size=14)
         )
 
         st.plotly_chart(fig)
@@ -141,6 +142,9 @@ def app():
         barmode='group', title_x=0.5,
         margin=dict(l=20, r=0, t=20, b=20),
         width=1000,
+        font=dict(
+            size=14,
+        )
     )
 
     st.plotly_chart(fig)
@@ -174,6 +178,8 @@ def app():
     fig.update_traces(textposition='auto')
     fig.update_layout(title_x=0.5, height=950, width=1000,
                       showlegend=False,
-                      hovermode=False, margin=dict(l=20, r=0, t=30, b=20))
+                      hovermode=False, margin=dict(l=20, r=0, t=30, b=20),
+                      font=dict(size=14)
+    )
 
     st.plotly_chart(fig)
